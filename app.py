@@ -41,18 +41,7 @@ if uploaded_file is not None:
     # capture selected user
     selected_user = st.sidebar.selectbox("Select User", user_list)
 
-st.html(
-    """
-    <style>
-    /* target baseWeb virtual list containers */
-    div[role="listbox"] {
-        position: fixed !important;
-        max-height: 40vh !important;
-        overflow-y: auto !important;
-    }
-    </style>
-    """
-)
+
 
 
    
