@@ -10,18 +10,7 @@ st.set_page_config(
     page_title="Whatsapp Chat Analyzer",
     page_icon="📞",
 )
-st.html(
-    """
-    <style>
-    div[role="listbox"] {
-    position:fixed !important;
-    max-height : 40vh !important
-    overflow-y: auto !important
-    }
-    </style>
-    """
-)
-    
+
 
 mpl.rcParams['font.family'] = ["Segoe UI Emoji",
     "Segoe UI Symbol",
