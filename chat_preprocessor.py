@@ -27,10 +27,9 @@ def preprocess(data: str) -> pd.DataFrame:
     users = []
     messages_list = []
     for message in df['user_message']:
-        # Capture any sender name before the first colon, including unicode and punctuation
-        entry = re.split(r'^([^:]+):\s(.*)', message)
+        entry = re.split(r'^([\w\s\+\-\(\)]+?):\s(.*)', message)
         if len(entry) > 2:
-            users.append(entry[1].strip())
+            users.append(entry[1])
             messages_list.append(entry[2])
         else:
             users.append('group_notification')
