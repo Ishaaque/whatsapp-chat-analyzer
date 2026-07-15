@@ -10,30 +10,7 @@ st.set_page_config(
     page_title="Whatsapp Chat Analyzer",
     page_icon="📞",
 )
-st.markdown(
-    
-    """
-    <style>
-    /* Ensure the list layer sits comfortably above the viewport fold */
-    div[data-baseweb="popover"] {
-        z-index: 99999 !important;
-    }
-    
-    /* Allow parent block to push content dynamically on small screens */
-    div[data-baseweb="select"] {
-        overflow: visible !important;
-        margin-bottom: 5px;
-    }
-    
-    /* Force browser to maintain scrollability inside the options list */
-    ul[role="listbox"] {
-        -webkit-overflow-scrolling: touch !important;
-        max-height: 250px !important;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
+
 
 mpl.rcParams['font.family'] = ["Segoe UI Emoji",
     "Segoe UI Symbol",
