@@ -34,8 +34,8 @@ if uploaded_file is not None:
     df = preprocessor.preprocess(data)
     # after df = preprocessor.preprocess(data)
     df = hp.add_sentiment(df, 'messages')  
-    user_list = df['user'].dropna().astype(str).str.strip().unique().tolist()
-    user_list = [user for user in user_list if user != 'group_notification' and user != '']
+    user_list = df['user'].dropna().unique().tolist()
+    user_list = [user for user in user_list if user != 'group_notification']
     user_list.sort()
     user_list.insert(0, 'Overall')
     # capture selected user
