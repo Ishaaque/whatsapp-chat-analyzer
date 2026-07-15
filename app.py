@@ -11,20 +11,28 @@ st.set_page_config(
     page_icon="📞",
 )
 st.markdown(
+    
     """
     <style>
-    div[data-baseweb="select"]{
-    overflow:visible !important:
-}
-div[role="listbox"]{
-    position:fixed !important;
-    bottom: auto !important;
-    max-height: 35vh !important;
-    z-index: 999999 !important;
-}
-</style>
-""",
-unsafe_allow_html=True
+    /* Ensure the list layer sits comfortably above the viewport fold */
+    div[data-baseweb="popover"] {
+        z-index: 99999 !important;
+    }
+    
+    /* Allow parent block to push content dynamically on small screens */
+    div[data-baseweb="select"] {
+        overflow: visible !important;
+        margin-bottom: 5px;
+    }
+    
+    /* Force browser to maintain scrollability inside the options list */
+    ul[role="listbox"] {
+        -webkit-overflow-scrolling: touch !important;
+        max-height: 250px !important;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
 )
 
 mpl.rcParams['font.family'] = ["Segoe UI Emoji",
